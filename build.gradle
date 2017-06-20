@@ -47,8 +47,9 @@ List logger = [
         'org.slf4j:jcl-over-slf4j:1.7.12'
 ]
 
+List validation = ["org.hibernate:hibernate-validator:5.4.1.Final"]
 
 dependencies {
-    compile apache_commons,junit,spring,servlet,logger,aspectj
-    runtime apache_commons,spring,servlet,logger,aspectj
+    compile apache_commons,junit,spring,servlet,logger,aspectj,validation
+    runtime apache_commons,spring,servlet,logger,aspectj,validation
 }
