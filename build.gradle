@@ -1,0 +1,54 @@
+group 'springMvc01'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+def defaultEncoding = 'UTF-8'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+List servlet = ['javax.servlet:javax.servlet-api:3.1.0']
+
+List apache_commons = [
+        "commons-codec:commons-codec:1.9",
+        "commons-io:commons-io:2.5"
+]
+
+List junit = ["junit:junit:4.11"]
+
+def spring_version="4.3.8.RELEASE"
+List spring =[
+        "org.springframework:spring-core:$spring_version",
+        "org.springframework:spring-beans:$spring_version",
+        "org.springframework:spring-aop:$spring_version",
+        "org.springframework:spring-context:$spring_version",
+        "org.springframework:spring-context-support:$spring_version",
+        "org.springframework:spring-web:$spring_version",
+        "org.springframework:spring-orm:$spring_version",
+        "org.springframework:spring-aspects:$spring_version",
+        "org.springframework:spring-webmvc:$spring_version",
+        "org.springframework:spring-test:$spring_version"
+]
+
+List aspectj = ["org.aspectj:aspectjrt:1.8.9"]
+
+List logger = [
+        'org.apache.logging.log4j:log4j-api:2.1',
+        'org.apache.logging.log4j:log4j-core:2.1',
+        'org.apache.logging.log4j:log4j-slf4j-impl:2.1',
+        'org.apache.logging.log4j:log4j-web:2.1',
+        'org.slf4j:jcl-over-slf4j:1.7.12'
+]
+
+
+dependencies {
+    compile apache_commons,junit,spring,servlet,logger,aspectj
+    runtime apache_commons,spring,servlet,logger,aspectj
+}
